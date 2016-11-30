@@ -1,4 +1,4 @@
-# Ember-number-to-words [WIP]
+# Ember-number-to-words
 [![Build Status](https://travis-ci.org/FutoRicky/ember-number-to-words.svg?branch=master)](https://travis-ci.org/FutoRicky/ember-number-to-words)
 
 Ember addon for converting number digits to words.
