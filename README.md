@@ -3,6 +3,8 @@
 
 Ember addon for converting number digits to words.
 
+[DEMO](http://futoricky.github.io/ember-number-to-words/)
+
 ## Installation
 
 `ember install ember-number-to-words`
