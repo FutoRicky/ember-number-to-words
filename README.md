@@ -1,26 +1,23 @@
-# Ember-number-to-words
+# Ember-number-to-words [WIP]
 
-This README outlines the details of collaborating on this Ember addon.
+Ember addon for converting number digits to words.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-number-to-words`
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Depending on language the component call is different. Currently it only supports English.
 
-## Running Tests
+Example:
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+`{{number-to-english number=11}}` will return `eleven`
 
-## Building
+##Contributions
 
-* `ember build`
+All contributions are welcomed and encouraged.
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+Please make all pull requests to the `dev` branch.
+
+Thanks!
