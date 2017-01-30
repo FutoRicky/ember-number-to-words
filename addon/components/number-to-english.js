@@ -5,14 +5,14 @@ export default Ember.Component.extend({
   layout,
 
   number: 0,
+  decimal: 'word',
 
-  words: Ember.computed('number', function() {
-
-    let string = this.number.toString(), units, tens, scales, start, end, chunks,
-                 chunksLen, chunk, ints, i, word, words, and = 'and';
+  integerToWord: function(number) {
+    let units, tens, scales, start, end, chunks,
+        chunksLen, chunk, ints, i, word, words, and = 'and';
 
     /* Is number zero? */
-    if(parseInt(string) === 0) {
+    if(parseInt(number) === 0) {
       return 'zero';
     }
 
@@ -40,11 +40,11 @@ export default Ember.Component.extend({
     ];
 
     /* Split user arguemnt into 3 digit chunks from right to left */
-    start = string.length;
+    start = number.length;
     chunks = [];
     while(start > 0) {
       end = start;
-      chunks.push(string.slice((start = Math.max(0, start - 3)), end));
+      chunks.push(number.slice((start = Math.max(0, start - 3)), end));
     }
 
     /* Check if function has enough scale words to be able to stringify the user argument */
@@ -86,7 +86,7 @@ export default Ember.Component.extend({
         if(ints[0] || ints[1]) {
 
           /* Chunk has a hundreds integer or chunk is the first of multiple chunks */
-          if((ints[2] || !i && chunksLen) && string.length >= 3) {
+          if((ints[2] || !i && chunksLen) && number.length >= 3) {
             words.push(and);
           }
         }
@@ -98,5 +98,17 @@ export default Ember.Component.extend({
       }
     }
     return words.reverse().join(' ');
+  },
+
+  word: Ember.computed('number', function() {
+    let fullNumber = this.number.toString().split('.'), integerNumber = fullNumber[0], decimalNumber = fullNumber[1];
+    let integerNumberInWords = this.integerToWords(integerNumber);
+    let decimalNumberInWords;
+    if (decimalNumber) {
+      decimalNumberInWords = decimalNumber.length === 1 ? this.integerToWords(decimalNumber + "0") : this.integerToWords(decimalNumber);
+    }
+
+
+    return decimalNumberInWords ? `${integerNumberInWords} with ${decimalNumberInWords}` : integerNumberInWords;
   })
 });
