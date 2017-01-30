@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  number: 0
+  numberDefault: 0,
+  numberDecimalWord: 0,
+  numberDecimalFraction: 0
 });
