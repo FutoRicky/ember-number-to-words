@@ -32,9 +32,9 @@ Depending on language the component call is different.
 *By default it just ignores the decimal and counts it as part of the integer*
 
 ## Language Contributions :metal:
-**English**: @futoricky
+**English**: [@futoricky](https://github.com/futoricky)
 
-**French**: @cicoub13
+**French**: [@cicoub13](https://github.com/cicoub13)
 
 ##Contributions
 
