@@ -1,39 +1,38 @@
-<h3>English</h3>
+<h3>Default</h3>
 
-<h5>Default</h5>
+{{input type="number" value=numberDefault}}
+
 <div class="flex-row">
-  {{input type="number" value=numberDefault}}
+  <span class="language">English: </span>
   <span>{{number-to-english number=numberDefault}}</span>
 </div>
-
-<h5>Decimal - word</h5>
 <div class="flex-row">
-  {{input type="number" value=numberDecimalWord}}
-  <span>{{number-to-english number=numberDecimalWord decimal="word"}}</span>
-</div>
-
-<h5>Decimal - fraction</h5>
-<div class="flex-row">
-  {{input type="number" value=numberDecimalFraction}}
-  <span>{{number-to-english number=numberDecimalFraction decimal="fraction"}}</span>
-</div>
-
-<h3>French</h3>
-
-<h5>Default</h5>
-<div class="flex-row">
-  {{input type="number" value=numberDefault}}
+  <span class="language">French: </span>
   <span>{{number-to-french number=numberDefault}}</span>
 </div>
 
-<h5>Decimal - word</h5>
+<h3>Decimal - word</h3>
+
+{{input type="number" value=numberDecimalWord}}
+
 <div class="flex-row">
-  {{input type="number" value=numberDecimalWord}}
+  <span class="language">English: </span>
+  <span>{{number-to-english number=numberDecimalWord decimal="word"}}</span>
+</div>
+<div class="flex-row">
+  <span class="language">French: </span>
   <span>{{number-to-french number=numberDecimalWord decimal="word"}}</span>
 </div>
 
-<h5>Decimal - fraction</h5>
+<h3>Decimal - fraction</h3>
+
+{{input type="number" value=numberDecimalFraction}}
+
 <div class="flex-row">
-  {{input type="number" value=numberDecimalFraction}}
+  <span class="language">English: </span>
+  <span>{{number-to-english number=numberDecimalFraction decimal="fraction"}}</span>
+</div>
+<div class="flex-row">
+  <span class="language">French: </span>
   <span>{{number-to-french number=numberDecimalFraction decimal="fraction"}}</span>
 </div>
