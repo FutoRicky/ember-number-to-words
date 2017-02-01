@@ -12,13 +12,14 @@ Ember addon for converting number digits to words.
 
 ## Usage
 
-Depending on language the component call is different. Currently are supported English and French.
+Depending on language the component call is different.
 
-Example:
+### Supported Languages
 
-`{{number-to-english number=11}}` will return `eleven`
-
-`{{number-to-french number=11}}` will return `onze`
+| Language | Component           | Example                                                  |
+| -------- | ------------------- | -------------------------------------------------------- |
+| English  | `number-to-english` | `{{number-to-english number=11}}` will return `eleven`   |
+| French   | `number-to-french`  | `{{number-to-french number=11}}` will return `onze`      |
 
 ### Properties
 
