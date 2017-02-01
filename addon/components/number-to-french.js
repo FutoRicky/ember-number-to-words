@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/number-to-english';
+import layout from '../templates/components/number-to-french';
 
 export default Ember.Component.extend({
   layout,
@@ -8,34 +8,34 @@ export default Ember.Component.extend({
 
   integerToWord: function(number) {
     let units, tens, scales, start, end, chunks,
-        chunksLen, chunk, ints, i, word, words, and = 'and';
+        chunksLen, chunk, ints, i, word, words, wordsGroups;
 
     // Is number zero?
     if(parseInt(number) === 0) {
-      return 'zero';
+      return 'zéro';
     }
 
     // Array of units as words
     units = [
-      '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
-      'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
-      'sixteen', 'seventeen', 'eighteen', 'nineteen'
+      '', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit',
+      'neuf', 'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze',
+      'seize', 'dix-sept', 'dix-huit', 'dix-neuf'
     ];
 
     // Array of tens as words
     tens = [
-      '', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',
-      'eighty', 'ninety'
+      '', '', 'vingt', 'trente', 'quarante', 'cinquante', 'soixante', 'soixante-dix',
+      'quatre-vingt', 'quatre-vingt-dix'
     ];
 
     // Array of scales as words
     scales = [
-      '', 'thousand', 'million', 'billion', 'trillion', 'quadrillion',
-      'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion',
-      'decillion', 'undecillion', 'duodecillion', 'tredecillion',
-      'quattuor-decillion', 'quindecillion', 'sexdecillion',
-      'septen-decillion', 'octodecillion', 'novemdecillion', 'vigintillion',
-      'centillion'
+      '', 'mille', 'million', 'milliard', 'billion', 'billiard',
+      'trillion', 'trilliard', 'quadrillion', 'quadrilliard', 'quintillion',
+      'quintilliard', 'sextillion', 'sextilliard', 'septillion',
+      'septilliard', 'octillion', 'octilliard',
+      'nonillion', 'nonilliard', 'décillion', 'décilliard',
+      'quinquagintilliard'
     ];
 
     // Split user argument into 3 digit chunks from right to left
@@ -53,8 +53,10 @@ export default Ember.Component.extend({
     }
 
     // Stringify each integer in each chunk
-    words = [];
+
+    wordsGroups = [];
     for(i = 0; i < chunksLen; i++) {
+      words = [];
       chunk = parseInt(chunks[i]);
       if(chunk) {
 
@@ -66,14 +68,34 @@ export default Ember.Component.extend({
           ints[0] += 10;
         }
 
+        // If tens integer is 7 or 9, i.e. 92, then add 10 to units integer and remove 1 to tens integer
+        if(ints[1] === 7 || ints[1] === 9) {
+          ints[0] += 10;
+          ints[1] -= 1;
+        }
+
         // Add scale word if chunk is not zero and array item exists
         if((word = scales[i])) {
-          words.push(word);
+          if(ints[0] > 1 || ints[1] || ints[2]) {
+            words.push(word + 's');
+          }
+          else {
+            words.push(word);
+          }
+          words.push(' ');
         }
 
         // Add unit word if array item exists
-        if((word = units[ints[0]])) {
+        if((word = units[ints[0]]) && (!(scales[i] && ints[0] === 1) || i > 1)) {
           words.push(word);
+        }
+
+        // Add separator if
+        if(ints[1] === 6 && ints[0] === 11) {
+          words.push(' et ');
+        }
+        else if(ints[1] > 1 && ints[0] !== 1){
+          words.push('-');
         }
 
         // Add tens word if array item exists
@@ -81,22 +103,28 @@ export default Ember.Component.extend({
           words.push(word);
         }
 
-        // Add 'and' string after units or tens integer if:
-        if(ints[0] || ints[1]) {
-
-          // Chunk has a hundreds integer or chunk is the first of multiple chunks
-          if((ints[2] || !i && chunksLen) && number.length >= 3) {
-            words.push(and);
-          }
-        }
-
         // Add hundreds word if array item exists
         if((word = units[ints[2]])) {
-          words.push(word + ' hundred');
+          if(ints[0] || ints[1]) {
+            words.push(' ');
+            if (ints[2] === 1){
+              words.push('cent');
+            }
+            else {
+              words.push(word + ' cent');
+            }
+          }
+          else if (ints[2] === 1){
+            words.push('cent');
+          }
+          else {
+            words.push(word + ' cents');
+          }
         }
       }
+      wordsGroups.push(words.reverse().join(''));
     }
-    return words.reverse().join(' ');
+    return wordsGroups.reverse().join(' ');
   },
 
   word: Ember.computed('number', function() {
@@ -116,11 +144,11 @@ export default Ember.Component.extend({
 
     switch (this.decimal) {
       case 'word':
-        word = decimalNumberInWords ? `${integerNumberInWords} with ${decimalNumberInWords}` : integerNumberInWords;
+        word = decimalNumberInWords ? `${integerNumberInWords} virgule ${decimalNumberInWords}` : integerNumberInWords;
         break;
       case 'fraction':
         if (decimalNumberInWords) {
-          word = `${integerNumberInWords} with <sup>${decimalNumber}</sup>&frasl;<sub>${`1${"0".repeat(decimalNumber.length)}`}</sub>`;
+          word = `${integerNumberInWords} et <sup>${decimalNumber}</sup>&frasl;<sub>${`1${"0".repeat(decimalNumber.length)}`}</sub>`;
         } else {
           word = integerNumberInWords;
         }

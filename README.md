@@ -26,8 +26,12 @@ Example:
 | decimal     | 'word'     | Returns decimal in word format    | No       |
 |             | 'fraction' | Return decimal in fraction format | No       |                          
 
-*By default it just ignores the decimal and counts it as part of the integer
+*By default it just ignores the decimal and counts it as part of the integer*
 
+## Language Contributions :metal:
+**English**: @futoricky
+
+**French**: @cicoub13
 
 ##Contributions
 

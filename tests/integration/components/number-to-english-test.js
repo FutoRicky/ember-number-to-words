@@ -82,11 +82,11 @@ test('it returns correct words for four digit numbers', function(assert) {
   this.render(hbs`{{number-to-english number=3902}}`);
   assert.equal(this.$().text().trim(), 'three thousand nine hundred and two');
 
-  this.render(hbs`{{number-to-english number=672}}`);
-  assert.equal(this.$().text().trim(), 'six hundred and seventy two');
+  this.render(hbs`{{number-to-english number=1672}}`);
+  assert.equal(this.$().text().trim(), 'one thousand six hundred and seventy two');
 
-  this.render(hbs`{{number-to-english number=999}}`);
-  assert.equal(this.$().text().trim(), 'nine hundred and ninety nine');
+  this.render(hbs`{{number-to-english number=9999}}`);
+  assert.equal(this.$().text().trim(), 'nine thousand nine hundred and ninety nine');
 });
 
 test('it returns correct words for five digit numbers', function(assert) {

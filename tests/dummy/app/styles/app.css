@@ -1,6 +1,8 @@
 .flex-row {
   display: flex;
+  margin: 1em 0
 }
-.flex-row > span {
-  margin-left: 1em;
+
+.flex-row > .language {
+  margin-right: 1em
 }
