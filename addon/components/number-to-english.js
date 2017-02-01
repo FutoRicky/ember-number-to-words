@@ -33,12 +33,12 @@ export default Ember.Component.extend({
       '', 'thousand', 'million', 'billion', 'trillion', 'quadrillion',
       'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion',
       'decillion', 'undecillion', 'duodecillion', 'tredecillion',
-      'quatttuor-decillion', 'quindecillion', 'sexdecillion',
+      'quattuor-decillion', 'quindecillion', 'sexdecillion',
       'septen-decillion', 'octodecillion', 'novemdecillion', 'vigintillion',
       'centillion'
     ];
 
-    // Split user arguemnt into 3 digit chunks from right to left
+    // Split user argument into 3 digit chunks from right to left
     start = number.length;
     chunks = [];
     while(start > 0) {
