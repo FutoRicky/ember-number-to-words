@@ -12,14 +12,11 @@ Ember addon for converting number digits to words.
 
 ## Usage
 
-Depending on language the component call is different.
+Depending on language the component call is different. Currently it only supports English.
 
-### Supported Languages
+Example:
 
-| Language | Component           | Example                                                  |
-| -------- | ------------------- | -------------------------------------------------------- |
-| English  | `number-to-english` | `{{number-to-english number=11}}` will return `eleven`   |
-| French   | `number-to-french`  | `{{number-to-french number=11}}` will return `onze`      |
+`{{number-to-english number=11}}` will return `eleven`
 
 ### Properties
 
@@ -29,8 +26,12 @@ Depending on language the component call is different.
 | decimal     | 'word'     | Returns decimal in word format    | No       |
 |             | 'fraction' | Return decimal in fraction format | No       |                          
 
-*By default it just ignores the decimal and counts it as part of the integer
+*By default it just ignores the decimal and counts it as part of the integer*
 
+## Language Contributions :metal:
+**English**: @futoricky
+
+**French**: @cicoub13
 
 ##Contributions
 
