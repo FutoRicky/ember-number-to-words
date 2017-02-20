@@ -129,9 +129,6 @@ export default Ember.Component.extend({
 
   word: Ember.computed('number', function() {
     let fullNumber, integerNumber, decimalNumber, integerNumberInWords, decimalNumberInWords, word;
-    if(!this.number) {
-      this.set('number', 0);
-    }
     if (this.decimal) {
       fullNumber = this.number.toString().split('.');
       integerNumber = fullNumber[0].toString();
