@@ -156,6 +156,9 @@ export default Ember.Component.extend({
       default:
         word = integerNumberInWords;
     }
+    if(this.capitalize) {
+      word = word.charAt(0).toUpperCase() + word.slice(1);
+    }
     return Ember.String.htmlSafe(word);
   })
 });
