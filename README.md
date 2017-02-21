@@ -23,11 +23,12 @@ Depending on language the component call is different.
 
 ### Properties
 
-| Property    | Attribute  | Description                       | Required |
-| ----------- | ---------- | --------------------------------- | -------- |
-| number      | `integer`  | Integer to convert to word        | Yes      |
-| decimal     | 'word'     | Returns decimal in word format    | No       |
-|             | 'fraction' | Return decimal in fraction format | No       |                          
+| Property    | Attribute  | Description                               | Required   |
+| ----------- | ---------- | ----------------------------------------- | ---------- |
+| number      | `integer`  | Integer to convert to word                | Yes        |
+| decimal     | 'word'     | Returns decimal in word format            | No         |
+|             | 'fraction' | Return decimal in fraction format         | No         |
+| capitalize  | `boolean`  | If true, returns capitalized first letter | No         |
 
 *By default it just ignores the decimal and counts it as part of the integer*
 
