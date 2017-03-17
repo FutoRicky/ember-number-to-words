@@ -20,6 +20,7 @@ Depending on language the component call is different.
 | -------- | ------------------- | -------------------------------------------------------- |
 | English  | `number-to-english` | `{{number-to-english number=11}}` will return `eleven`   |
 | French   | `number-to-french`  | `{{number-to-french number=11}}` will return `onze`      |
+| Spanish  | `number-to-spanish` | `{{number-to-spanish number=11}}` will return `once`     |
 
 ### Properties
 
@@ -34,6 +35,8 @@ Depending on language the component call is different.
 
 ## Language Contributions :metal:
 **English**: [@futoricky](https://github.com/futoricky)
+
+**Spanish**: [@futoricky](https://github.com/futoricky)
 
 **French**: [@cicoub13](https://github.com/cicoub13)
 
