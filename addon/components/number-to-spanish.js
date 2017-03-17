@@ -2,6 +2,11 @@ import Ember from 'ember';
 import layout from '../templates/components/number-to-english';
 
 export default Ember.Component.extend({
+/* 
+  Logica de convertidor basado en https://gist.github.com/alfchee/e563340276f89b22042a
+  por @alfchee
+*/
+
   layout,
 
   number: 0,
