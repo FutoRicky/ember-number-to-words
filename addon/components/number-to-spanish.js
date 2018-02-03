@@ -22,16 +22,16 @@ export default Ember.Component.extend({
       letrasMonedaCentavoSingular: "CENTAVO"
     };
 
-    if (data.centavos > 0) {
-      let _this = this;
-      data.letrasCentavos = "CON " + (function (){
-        if (data.centavos === 1) {
-          return _this.millones(data.centavos) + " " + data.letrasMonedaCentavoSingular;
-        } else {
-          return _this.millones(data.centavos) + " " + data.letrasMonedaCentavoPlural;
-        }
-        });
-    }
+    // if (data.centavos > 0) {
+    //   let _this = this;
+    //   data.letrasCentavos = "CON " + (function (){
+    //     if (data.centavos === 1) {
+    //       return _this.millones(data.centavos) + " " + data.letrasMonedaCentavoSingular;
+    //     } else {
+    //       return _this.millones(data.centavos) + " " + data.letrasMonedaCentavoPlural;
+    //     }
+    //     });
+    // }
 
     if(data.enteros === 0) {
       return "CERO ";
