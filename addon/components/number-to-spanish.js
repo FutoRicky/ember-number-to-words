@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string'; 
 import layout from '../templates/components/number-to-english';
 
-export default Ember.Component.extend({
+export default Component.extend({
 /* 
   Logica de convertidor basado en https://gist.github.com/alfchee/e563340276f89b22042a
   por @alfchee
@@ -177,7 +179,7 @@ export default Ember.Component.extend({
       return strMillones + " " + strMiles;
   },
 
-  word: Ember.computed('number', function() {
+  word: computed('number', function() {
     let fullNumber, integerNumber, decimalNumber, integerNumberInWords, decimalNumberInWords, word;
     if (this.decimal) {
       fullNumber = this.number.toString().split('.');
@@ -210,6 +212,6 @@ export default Ember.Component.extend({
     if(this.capitalize) {
       word = word.charAt(0).toUpperCase() + word.slice(1);
     }
-    return Ember.String.htmlSafe(word);
+    return htmlSafe(word);
   })
 });
