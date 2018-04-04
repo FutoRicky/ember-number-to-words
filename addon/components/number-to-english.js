@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string'; 
 import layout from '../templates/components/number-to-english';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   number: 0,
@@ -99,7 +101,7 @@ export default Ember.Component.extend({
     return words.reverse().join(' ');
   },
 
-  word: Ember.computed('number', function() {
+  word: computed('number', function() {
     let fullNumber, integerNumber, decimalNumber, integerNumberInWords, decimalNumberInWords, word;
     if (this.decimal) {
       fullNumber = this.number.toString().split('.');
@@ -131,6 +133,6 @@ export default Ember.Component.extend({
     if(this.capitalize) {
       word = word.charAt(0).toUpperCase() + word.slice(1);
     }
-    return Ember.String.htmlSafe(word);
+    return htmlSafe(word);
   })
 });
