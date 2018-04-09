@@ -43,7 +43,7 @@ Depending on language the component call is different.
 
 **Lithuanian**: [@rimvislt](https://github.com/rimvislt)
 
-##Contributions
+## Contributions
 
 All contributions are welcomed and encouraged.
 
