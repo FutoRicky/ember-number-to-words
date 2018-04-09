@@ -16,11 +16,12 @@ Depending on language the component call is different.
 
 ### Supported Languages
 
-| Language | Component           | Example                                                  |
-| -------- | ------------------- | -------------------------------------------------------- |
-| English  | `number-to-english` | `{{number-to-english number=11}}` will return `eleven`   |
-| French   | `number-to-french`  | `{{number-to-french number=11}}` will return `onze`      |
-| Spanish  | `number-to-spanish` | `{{number-to-spanish number=11}}` will return `once`     |
+| Language   | Component              | Example                                                       |
+| ---------- | ---------------------- | ------------------------------------------------------------- |
+| English    | `number-to-english`    | `{{number-to-english number=11}}` will return `eleven`        |
+| French     | `number-to-french`     | `{{number-to-french number=11}}` will return `onze`           |
+| Lithuanian | `number-to-lithuanian` | `{{number-to-lithuanian number=11}}` will return `vienuolika` |
+| Spanish    | `number-to-spanish`    | `{{number-to-spanish number=11}}` will return `once`          |
 
 ### Properties
 
@@ -39,6 +40,8 @@ Depending on language the component call is different.
 **Spanish**: [@futoricky](https://github.com/futoricky)
 
 **French**: [@cicoub13](https://github.com/cicoub13)
+
+**Lithuanian**: [@rimvislt](https://github.com/rimvislt)
 
 ##Contributions
 
