@@ -6,7 +6,11 @@
     "ember-addon",
     "digit to words",
     "number to words",
-    "number converter"
+    "number converter",
+    "spanish",
+    "english",
+    "french",
+    "luthuanian"
   ],
   "license": "MIT",
   "author": "Ricardo Mercado <hello@RicardoAMercado.com>",
